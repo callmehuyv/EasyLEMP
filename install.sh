@@ -37,7 +37,8 @@ yum -y remove postfix*
 yum -y remove rsyslog*
 
 #IPTABLE
-systemctl start  iptables.service
+yum -y install iptables-services
+systemctl start iptables.service
 iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 service iptables save
 
