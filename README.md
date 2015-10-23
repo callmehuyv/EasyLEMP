@@ -5,7 +5,7 @@ What is EasyLEMP ?
 ===================
 EasyLEMP is some bash script. EasyLEMP will help you install LEMP( Nginx, PHP-FPM, MariaDB on Linux ) and some other software like CSF, Composer...
 You only need to copy below code to terminal, then press enter. Wait about 3 minutes. Restart VPS. Enter command "easynginx" to access menu.
-You can create user, domain for each user. And the last, EasyLEMP was writen to optimous speed and security.
+You can create user, domain for each user. And the last, EasyLEMP was written to optimus speed and security with multi pool PHP.
 
 How to install
 ============
