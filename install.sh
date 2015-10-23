@@ -1,5 +1,5 @@
 #!/bin/bash
-#MOVE TO ETC/EASYNGINX
+#MOVE TO ETC/EASYLEMP
 mkdir /etc/easylemp/
 mv /tmp/Centos-7-64x/* /etc/easylemp/
 cd /etc/easylemp/
