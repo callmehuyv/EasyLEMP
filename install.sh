@@ -1,7 +1,7 @@
 #!/bin/bash
 #MOVE TO ETC/EASYLEMP
 mkdir /etc/easylemp/
-mv /tmp/Centos-7-64x/* /etc/easylemp/
+mv /tmp/EasyLEMP/* /etc/easylemp/
 cd /etc/easylemp/
 
 #CLEAN BEFORE INSTALL
