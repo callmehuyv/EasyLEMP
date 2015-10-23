@@ -10,7 +10,7 @@ You can create user, domain for each user. And the last, EasyLEMP was writen to 
 How to install
 ============
 
-yum -y install git && cd /tmp/ && git clone https://github.com/callmehuyv/EasyLEMP.git && sh /tmp/Centos-7-64x/install.sh
+yum -y install git && cd /tmp/ && git clone https://github.com/callmehuyv/EasyLEMP.git && sh /tmp/EasyLEMP/install.sh
 
 
 How to use
