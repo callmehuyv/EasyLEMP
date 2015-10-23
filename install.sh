@@ -78,6 +78,11 @@ mysql_secure_installation
 cp -fr /etc/easylemp/sources/my.cnf /etc/
 systemctl enable mariadb.service
 
+#INSTALL MEMECACHED
+yum -y install memcached
+systemctl start memcached
+systemctl enable memcached
+
 #MOVE MENU, SOURCE
 mv /etc/easylemp/sources/easylemp /usr/sbin
 chmod +x /usr/sbin/easylemp
