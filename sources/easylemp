@@ -2,7 +2,7 @@
 prompt="Type in your select:"
 options=("Check DDOS" "Restart all" "Create User" "Create Domain")
 printf "===============================================\n"
-printf "                   EASY NGINX                  \n"
+printf "                   EASY LEMP                   \n"
 printf "===============================================\n"
 
 PS3="$prompt"
