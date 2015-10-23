@@ -6,7 +6,7 @@ printf "                   EASY LEMP                   \n"
 printf "===============================================\n"
 
 PS3="$prompt"
-select opt in "${options[@]}" "Thoat"; do 
+select opt in "${options[@]}" "Exit"; do 
 
     case "$REPLY" in
     1 ) netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n;;
