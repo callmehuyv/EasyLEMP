@@ -1,0 +1,20 @@
+#!/bin/sh
+prompt="Type in your select:"
+options=("Check DDOS" "Restart all" "Create User" "Create Domain")
+printf "===============================================\n"
+printf "                   EASY NGINX                  \n"
+printf "===============================================\n"
+
+PS3="$prompt"
+select opt in "${options[@]}" "Thoat"; do 
+
+    case "$REPLY" in
+    1 ) netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n;;
+    2 ) service nginx restart && service php-fpm restart && service iptables restart & csf -r restart;;
+    3 ) sh /etc/easylemp/sources/create_user.sh;;
+	4 ) sh /etc/easylemp/sources/create_domain.sh;;
+    
+    $(( ${#options[@]}+1 )) ) /bin/vps;;
+    *) echo "Please type in number on list";continue;;
+    esac
+done
