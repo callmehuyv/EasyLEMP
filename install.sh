@@ -90,6 +90,7 @@ chmod 600 /etc/easylemp/sources/*.sh
 chmod 700 -R /etc/easylemp/
 
 #INSTALL CFS FIREWALL
+yum -y install wget perl unzip net-tools perl-libwww-perl perl-LWP-Protocol-https perl-GDGraph -y
 wget http://www.configserver.com/free/csf.tgz
 tar -xzf csf.tgz
 ufw disable
