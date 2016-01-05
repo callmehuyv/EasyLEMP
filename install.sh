@@ -2,9 +2,12 @@
 #MOVE TO ETC/EASYLEMP
 mkdir /etc/easylemp/
 mv /tmp/EasyLEMP/* /etc/easylemp/
+mv /etc/easylemp/sources/MariaDB.repo /etc/yum.repos.d/
 cd /etc/easylemp/
 
 #CLEAN BEFORE INSTALL
+
+yum -y update
 clear
 yum clean all
 
@@ -71,7 +74,6 @@ mkdir /etc/php-fpm.d/users/
 systemctl enable php-fpm.service
 
 #INSTALL MARIADB
-yum -y update
 yum -y install mariadb-server mariadb-client
 systemctl start mariadb
 mysql_secure_installation
