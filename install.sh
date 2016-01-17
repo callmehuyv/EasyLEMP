@@ -74,6 +74,7 @@ mkdir /etc/php-fpm.d/users/
 systemctl enable php-fpm.service
 
 #INSTALL MARIADB
+yum remove MariaDB* -y
 yum -y install mariadb-server mariadb-client
 systemctl start mariadb
 mysql_secure_installation
