@@ -3,6 +3,7 @@
 mkdir /etc/easylemp/
 mv /tmp/EasyLEMP/* /etc/easylemp/
 mv /etc/easylemp/sources/MariaDB.repo /etc/yum.repos.d/
+mv /etc/easylemp/sources/Nginx.repo /etc/yum.repos.d/
 cd /etc/easylemp/
 
 #CLEAN BEFORE INSTALL
