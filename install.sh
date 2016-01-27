@@ -63,7 +63,7 @@ mv /etc/easylemp/sources/nginx.conf /etc/nginx/
 sed -i "s/number_cores/$number_cores/g" /etc/nginx/nginx.conf
 
 #INSTALL PHP-FPM
-yum --enablerepo=remi,remi-php56 install -y php-opcache php5-mcrypt php5-cli php-pecl-apcu php-cli php-pear php-pdo php-mysqlnd php-pgsql php-pecl-mongo php-pecl-sqlite php-pecl-memcache php-pecl-memcached php-gd php-mbstring php-mcrypt php-xml
+yum --enablerepo=remi,remi-php56 install -y php-opcache php-pecl-apcu php-cli php-pear php-pdo php-mysqlnd php-pgsql php-pecl-mongo php-pecl-sqlite php-pecl-memcache php-pecl-memcached php-gd php-mbstring php-mcrypt php-xml
 rm -rf /etc/php-fpm.d/www.conf
 rm -rf /etc/php-fpm.conf
 mv /etc/easylemp/sources/php-fpm.conf /etc/
