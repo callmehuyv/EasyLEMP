@@ -76,7 +76,7 @@ systemctl enable php-fpm.service
 
 #INSTALL MARIADB
 yum remove MariaDB* -y
-yum -y install mariadb-server mariadb-client
+yum -y install MariaDB-server MariaDB-client
 systemctl start mariadb
 mysql_secure_installation
 cp -fr /etc/easylemp/sources/my.cnf /etc/
