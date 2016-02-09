@@ -18,6 +18,10 @@ yum install sed which -y
 # GET INFO CPU
 number_cores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
 
+#DISABLE selinux
+rm -rf /etc/sysconfig/selinux
+mv /etc/easylemp/sources/selinux /etc/sysconfig/
+
 #STOP, REMOVE, REMOVE SOMETHING
 systemctl stop sendmail.service
 systemctl disable sendmail.service
