@@ -21,6 +21,7 @@ number_cores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
 #DISABLE selinux
 rm -rf /etc/selinux/config
 mv /etc/easylemp/sources/config /etc/selinux/
+#NOT TEST /etc/sysconfig/selinux
 
 #STOP, REMOVE, REMOVE SOMETHING
 systemctl stop sendmail.service
