@@ -12,6 +12,9 @@ yum -y update
 clear
 yum clean all
 
+#Install some package
+yum install sed which -y
+
 # GET INFO CPU
 number_cores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
 
