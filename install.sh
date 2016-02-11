@@ -65,7 +65,6 @@ systemctl enable nginx.service
 mkdir /etc/nginx/users
 mv /etc/easylemp/sources/staticfiles.conf /etc/nginx/conf.d/
 mv /etc/easylemp/sources/block.conf /etc/nginx/conf.d/
-mv /etc/easylemp/sources/default_ip.conf /etc/nginx/default.d/
 rm -rf /etc/nginx/nginx.conf
 mv /etc/easylemp/sources/nginx.conf /etc/nginx/
 sed -i "s/number_cores/$number_cores/g" /etc/nginx/nginx.conf
@@ -79,6 +78,8 @@ rm -rf /etc/php.ini
 mv /etc/easylemp/sources/php.ini /etc/
 
 mkdir /etc/php-fpm.d/users/
+mkdir /etc/php-fpm.d/socks/
+chown -R nginx:nginx /etc/php-fpm.d/socks/
 
 systemctl enable php-fpm.service
 

@@ -3,8 +3,6 @@
 
 SED=`which sed`
 cd /etc/easylemp/sources/
-source /etc/easylemp/variables/port.sh
-port=$(($port + 1))
 echo -n "Enter user you want to create: "
 read user
 
@@ -37,14 +35,7 @@ else
 	#CREATE POOL FOR USER
 	cp /etc/easylemp/sources/pool.conf /etc/php-fpm.d/users/$user/pool_$user.conf
 	$SED -i "s/@@USER@@/$user/g" /etc/php-fpm.d/users/$user/pool_$user.conf
-	$SED -i "s/@@PORT@@/$port/g" /etc/php-fpm.d/users/$user/pool_$user.conf
-
-	rm /etc/easylemp/variables/port.sh
-	touch /etc/easylemp/variables/port.sh
-	echo "port=$port" >> /etc/easylemp/variables/port.sh
-	touch /etc/easylemp/variables/port_$user.sh
-	echo "port=$port" >> /etc/easylemp/variables/port_$user.sh
-
+	
 	touch /etc/easylemp/user.log
 	echo "-User $user was created" >> /etc/easylemp/user.log
 

@@ -14,16 +14,18 @@ if [ -d "/home/$user" ]; then
 		echo -n "Domain already exists! Please try again"
 		exit;
 	else
-		source /etc/easylemp/variables/port_$user.sh
 		cp /etc/easylemp/sources/vhost.conf /etc/nginx/users/$user/$domain.conf
-		$SED -i "s/@@PORT@@/$port/g" /etc/nginx/users/$user/$domain.conf
 		$SED -i "s/@@DOMAIN@@/$domain/g" /etc/nginx/users/$user/$domain.conf
 		$SED -i "s/@@USER@@/$user/g" /etc/nginx/users/$user/$domain.conf
 
 mkdir /home/$user/$domain/
 touch /home/$user/$domain/index.php
 cat > "/home/$user/$domain/index.php" <<END
-<?php phpinfo(); ?>
+<?php
+	if( isset('iam') && $_GET['iam'] == 'easylemp' ) {
+		echo phpinfo();
+	};
+?>
 END
 		chmod 701 /home/$user/$domain
 		chown -R $user:$user /home/$user/$domain
