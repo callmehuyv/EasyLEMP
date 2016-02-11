@@ -22,9 +22,11 @@ mkdir /home/$user/$domain/
 touch /home/$user/$domain/index.php
 cat > "/home/$user/$domain/index.php" <<END
 <?php
-	if( isset('iam') && $_GET['iam'] == 'easylemp' ) {
+	if( isset(\$_GET['iam']) && \$_GET['iam'] == 'easylemp' ) {
 		echo phpinfo();
-	};
+	} else {
+		echo 'Easylemp was installed. Nothing to show here.';
+	}
 ?>
 END
 		chmod 701 /home/$user/$domain
