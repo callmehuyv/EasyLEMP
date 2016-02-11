@@ -12,6 +12,10 @@ How to install
 
 yum -y install git && cd /tmp/ && git clone https://github.com/Laraviorg/EasyLEMP.git && sh /tmp/EasyLEMP/install.sh
 
+You also can install Dev Version
+============
+
+yum -y install git && cd /tmp/ && git clone --branch dev https://github.com/Laraviorg/EasyLEMP.git && sh /tmp/EasyLEMP/install.sh
 
 How to use
 ==========
