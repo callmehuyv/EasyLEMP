@@ -79,7 +79,6 @@ mv /etc/easylemp/sources/php.ini /etc/
 
 mkdir /etc/php-fpm.d/users/
 mkdir /etc/php-fpm.d/socks/
-chown -R nginx:nginx /etc/php-fpm.d/socks/
 
 systemctl enable php-fpm.service
 
