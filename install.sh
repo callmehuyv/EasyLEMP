@@ -55,11 +55,11 @@ iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 service iptables save
 
 #INSTALL NGINX
-rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
+rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-7.noarch.rpm
 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
 
-yum --enablerepo=remi,remi-php56 install -y nginx php-fpm php-common
+yum --enablerepo=remi,remi-php70 install -y nginx php-fpm php-common
 systemctl enable nginx.service
 
 mkdir /etc/nginx/users
@@ -70,7 +70,7 @@ mv /etc/easylemp/sources/nginx.conf /etc/nginx/
 sed -i "s/number_cores/$number_cores/g" /etc/nginx/nginx.conf
 
 #INSTALL PHP-FPM
-yum --enablerepo=remi,remi-php56 install -y php-devel php-opcache php-pecl-apcu php-cli php-pear php-pdo php-mysqlnd php-pgsql php-pecl-mongo php-pecl-sqlite php-pecl-memcache php-pecl-memcached php-gd php-mbstring php-mcrypt php-xml
+yum --enablerepo=remi,remi-php70 install -y php-devel php-opcache php-pecl-apcu php-cli php-pear php-pdo php-mysqlnd php-pgsql php-pecl-mongo php-pecl-sqlite php-pecl-memcache php-pecl-memcached php-gd php-mbstring php-mcrypt php-xml
 rm -rf /etc/php-fpm.d/www.conf
 rm -rf /etc/php-fpm.conf
 mv /etc/easylemp/sources/php-fpm.conf /etc/
